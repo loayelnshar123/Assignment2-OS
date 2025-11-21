@@ -1,0 +1,74 @@
+============================================================
+Assignment 2 by mazen
+============================================================
+
+This document contains the code examples and explanations for Lab-5, along with answers to the assignment questions.
+
+-------------------------------------------------
+Part 1: Lab-5 Code Examples and Explanations
+-------------------------------------------------
+
+Exercise 1: Using fork() in C
+------------------------------
+Explanation:
+• fork() splits the program into two processes.
+• It returns 0 to the child process.
+• It returns the child's Process ID (PID) to the parent process.
+• The if/else if statements check the return value to make each process print a different message.
+
+
+Exercise 2: Starting a Process in the Background
+------------------------------------------------
+Explanation:
+• sleep 300: A command that does nothing for 300 seconds.
+• &: The ampersand runs the command in the "background".
+• jobs: Lists all commands running in the background from your terminal.
+
+
+Exercise 3: Stopping a Process
+-------------------------------
+Explanation:
+• ps aux | grep sleep: Finds the Process ID (PID) of the sleep command.
+• kill <PID>: Sends a signal to stop the process with that specific PID. You replace <PID> with the actual number you found.
+
+
+Exercise 4: Pausing and Resuming a Process
+------------------------------------------
+Explanation:
+• kill -STOP <PID>: Pauses (freezes) the process. It's still alive but not running.
+• kill -CONT <PID>: Continues (resumes) the paused process.
+
+
+Exercise 5: Role of the Linker
+------------------------------
+Explanation:
+• The linker takes the compiled code from file1.c and file2.c and connects them.
+• It links the hello() call in file2.c to the hello() function definition in file1.c.
+
+
+Exercise 6: Role of the Loader
+------------------------------
+Explanation:
+• The loader is part of the OS that loads your program into memory when you run it.
+• It also loads any necessary "shared libraries" (e.g., the library containing the printf function).
+
+
+-------------------------------------------------
+Part 2: Linker and Loader Job Explanations
+-------------------------------------------------
+
+Q: Explain what is the job of the Linker.
+A: The compiler turns your .c files into .o files. The linker turns your .o files and libraries into one final executable program.
+
+
+Q: Explain what is the job of the Loader.
+A: The loader is a part of the operating system that loads a program from your hard drive into memory (RAM) so it can run.
+
+
+-------------------------------------------------
+Part 3: Makefile and Program Execution
+-------------------------------------------------
+
+• A Makefile was written to compile each of the examples efficiently.
+• The command `make` was used from the project folder to build all the programs.
+• Each compiled program was then run to verify its correct functionality and observe the concepts explained above.
